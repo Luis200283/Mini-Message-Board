@@ -1,13 +1,33 @@
 <html>
-    <head>
-        <title>My App</title>
-    </head>
-    <body>
-        <h1>My App</h1>
-        <ul>
-            <% messages.forEach(message => { %>
-                <li><%= message.text %></li>
+
+<head>
+    <title>My App</title>
+</head>
+
+<body>
+    <h1>My App</h1>
+    <div>
+        <a href="/new">
+            <h3>New Message</h3>
+        </a>
+    </div>
+    <ul>
+        <% messages.forEach(message=> { %>
+            <li>
+                <ol>
+                    <div>
+                        User: <%= message.user %>
+                    </div>
+                    <div>
+                        Message: <%= message.text %>
+                    </div>
+                    <div>
+                        Date: <%= message.added %>
+                    </div>
+                </ol>
+            </li>
             <% }); %>
-        </ul>
-    </body>
+    </ul>
+</body>
+
 </html>
