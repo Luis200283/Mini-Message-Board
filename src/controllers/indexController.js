@@ -1,7 +1,13 @@
-import message from '../models/db.js';
+import { getAllUsers, deleteMessageInDB } from '../db/queries.js';
+import db from '../db/populatedb.js'
 
-const greeting = (req, res) => {
-    res.render('index', { messages: message })
+export const showAllUsers = async (req, res) => {
+    const result = await getAllUsers()
+    res.render('index', { messages: result })
 }
 
-export default greeting
+export const deleteMessage = async (req, res) => {
+    const id = req.params.id
+    await deleteMessageInDB(id)
+    res.redirect('/')
+} 

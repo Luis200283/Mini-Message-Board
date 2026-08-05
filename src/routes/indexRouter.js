@@ -1,7 +1,9 @@
 import { Router } from 'express';
-import indexController from '../controllers/indexController.js'
+import { showAllUsers, deleteMessage } from '../controllers/indexController.js'
 const indexrouter = Router();
 
-indexrouter.get('/', indexController);
+indexrouter.get('/', showAllUsers);
+indexrouter.get('/delete/:id', deleteMessage)
+
 
 export default indexrouter;

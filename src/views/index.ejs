@@ -16,14 +16,17 @@
             <li>
                 <ol>
                     <div>
-                        User: <%= message.user %>
+                        User: <%= message.username %>
                     </div>
                     <div>
-                        Message: <%= message.text %>
+                        Message: <%= message.message %>
                     </div>
                     <div>
                         Date: <%= message.added %>
                     </div>
+                    <form action="delete/<%= message.id %>">
+                        <button type="submit">delete</button>
+                    </form>
                 </ol>
             </li>
             <% }); %>
